@@ -47,7 +47,13 @@ const Welcome = () => {
                 <div className="w-10 h-10 rounded-full border-2 border-white flex justify-center items-center">
                   <SiEthereum fontSize={21} color="#fff" />
                 </div>
-                <BsInfoCircle fontSize={17} color="#fff" />
+                <a
+                  href={`https://ropsten.etherscan.io/address/${currentAccount}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <BsInfoCircle fontSize={17} color="#fff" />
+                </a>
               </div>
               <div>
                 <p className="text-white font-light text-sm">
