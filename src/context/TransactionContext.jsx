@@ -73,6 +73,12 @@ export const TransactionsProvider = ({ children }) => {
     try {
       if (!ethereum) return alert("Please install MetaMask.");
 
+      if (ethereum.networkVersion != "4") {
+        await ethereum.request({
+          method: "wallet_switchEthereumChain",
+          params: [{ chainId: "0x4" }],
+        });
+      }
       const accounts = await ethereum.request({ method: "eth_accounts" });
 
       if (accounts.length) {
